@@ -62,5 +62,6 @@
    "xelatex"
   ]
  }
-]
+],
+"latex-workshop.linter.chktex.args": ["-l", "config.chktexrc"]
 }
