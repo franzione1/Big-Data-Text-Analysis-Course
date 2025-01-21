@@ -213,9 +213,9 @@ Per raggiungere il parallelismo massimo, possiamo: usare una Reduce task per ese
 Per guardare il \textbf{costo} del Map Reduce, devo guardare il quantitativo dei dati, perchè l'operazione più costosa è il trasferimento di essi. A questo punto una soluzione sicuramente potrebbe essere quella di tenere una sola macchina (rimuovendo il parallelismo) necessitando così di una macchina sola che contenga tutti i miei dati. 
 \\
 \textbf{Dobbiamo bilanciare queste due cose.} Lo facciamo basandoci su due parametri, la \textbf{Reducer size} (che indichiamo con \textit{q}) e il \textbf{Replication rate} (che indichiamo con \textit{r}).
-\subsubsection{Reducer size $q$}
+\subsubsection{Reducer size \textit{q}}
 Questo parametro indica il numero di valori associabili ad una key. Nell'architettura Combiner, questo valore è fisso a 1.
-\subsubsection{Replication rate $r$}
+\subsubsection{Replication rate \textit{r}}
 Questo parametro indica il numero di coppie key-value che la lettura di un input mi genera. Esiste un algoritmo (non trattato a lezione) che è quello della moltiplicazione matriciale in uno step solo, che ha come $r$ il numero $k$ delle colonne quindi ad ogni input genero $k$ coppie. Ma di base lo abbiamo sempre considerato 1. 
 \\[2ex]
 \textbf{\large{Relazione tra $r$ e $q$}}

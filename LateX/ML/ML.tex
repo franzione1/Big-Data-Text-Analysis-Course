@@ -95,7 +95,8 @@ Si fa distinzione tra $supervised$ $learning$ e $unsupervised$ $learning$. Nel c
 
 \newpage
 
-\subsubsection{Regression}
+\subsection{Regressione}
+\subsubsection{Regressione lineare}
 Immaginiamo di voler stimare la qualità della vita di un individuo, a partire dal PIL pro capite. Potremmo quindi indicare la $life\_satisfaction$:
 \begin{center}
     $life\_satisfaction$ = $\theta_0$ + $\theta_1$ $\times$ PIL
@@ -113,7 +114,7 @@ E ricadiamo nella categoria di \textbf{regressione}.
 \\
 \begin{figure}[th]
     \centering
-    \includegraphics[scale=0.4]{ML/img/class lineare.png}
+    \includegraphics[scale=0.25]{ML/img/class lineare.png}
     \label{fig:linclass}
 \end{figure}
 \\
@@ -121,8 +122,12 @@ Un esempio pratico è il modello SVM, che sfrutta il concetto di $support$ $vect
 \\
 \begin{figure}[th]
     \centering
-    \includegraphics[scale=0.30]{ML/img/hyperplane.png}
+    \includegraphics[scale=0.25]{ML/img/hyperplane.png}
 \end{figure}
+\\
+\textbf{Attenzione!} La logistic regression è un classificatore binario che non fa rette, ma semplicemente calcola la probabilità che una classe sia 1 rispetto alla probabilità che sia 0 ed è quindi diverso dalla linear regression. (\textit{Il prof bene o male ha detto solo questo sulla logistic regression.})
+
+\newpage
 
 \subsubsection{Decision Tree}
 Uno dei modelli più versatili in ML, il Decision Tree (o albero decisionale) può essere utilizzato per classificazione e regressione, ma anche in casi con multiple outputs. Sono algoritmi molto potenti che possono essere sfruttati per dataset complessi. 
@@ -200,26 +205,19 @@ Il risultato è che facendolo con anche gli altri, il valore con info gain più 
 
 \newpage
 
-\subsubsection{Instance based learning}
-Viene descritta come la più semplice forma di apprendimento: non si impara nulla, si fa tutto a memoria, con una funzione di istanza (quanto l'elemento A è simile a B o C ecc..) un esempio sono gli algoritmi simili al nearest neighbours. 
-\\ 
-Sono una serie di modelli molto utilizzati per fare profilazione e cercare le preferenze di un utente.
-
-\subsubsection{One rule algorithm}
-Inventato nel '94, è l'algoritmo più banale di tutti. Da un dataset, estrae una sola regola. L'idea alla base è molto semplice, tuttavia non è da sottovalutare: spesso le idee semplici sono quelle più efficaci.
+\subsubsection{Simple Algorithm}
+Come trasformo il Decision Tree in una regola? Esiste una procedura iterativa, dove cerchiamo di massimizzare l'accuracy della stessa.Tenendo in considerazione il numero di istanze a cui si applica la regola e al numero di quelli a cui si applica correttamente e massimizzando il loro rapporto.
+\\
+\textbf{Esempio.} Immaginiamo di avere un dataset con i dati sulla vista di alcune persone. La regola? Vogliamo capire qual è il tipo corretto di lenti per una persona non vedente. Sappiamo diverse sue caratteristiche fisiche. Potenzialmente, una regola potrebbe essere "Altezza $>$ 1.80". Andiamo a contare nel dataset per quante persone servono le lenti ,che sono sopra a l'1.80, e si fa il rapporto tra casi positivi / casi considerati dalla regola. Potremmo avere 4 persone con necessità su 45 considerate. La regola sarebbe molto debole. 
 \\
 \begin{figure}[th]
     \centering
-    \includegraphics[scale=0.5]{ML/img/onerule.png}
+    \includegraphics[scale=0.35]{ML/img/dataset_lenses.png}
 \end{figure}
 \\
-Analizziamo questo dataset e il potenziale risultato del one rule. Immaginiamo di dover prevedere se giocare a calcetto, sulla base del meteo; contiamo per ogni l'attributo \texttt{Outlook} i valori distinti di play. Ad esempio, per \texttt{Outlook} = \texttt{Sunny} notiamo che è \texttt{No} 3 volte su 5, il che significa che commette 2 errori su 5. E li contiamo per ogni valore di ogni feature. Alla fine prendiamo come rule la feature su cui commettiamo meno errori totali: in questo esempio, una a scelta tra \texttt{Humidity} e \texttt{Outlook}.
-\\
-\textbf{Quale errore commette il one rule?} Il motivo per cui è poco utilizzato, risiede proprio nella sua semplicità. Seguendo il suo modus operandi, è utile notare che: per valori numerici ad intervalli grandi, diventa impossibile contare gli errori. Ad esempio, se aggiungessimo l'attributo temperatura, con tanti valori di temperature in un intervallo compreso tra i 15 e i 25 gradi, lui imparerebbe una rappresentazione troppo dettagliata, causando $overfitting$.
+Cosa prendiamo? La regola che massimizza il rapporto. Quindi prenderemo Tear production rate = normal oppure astigmatism = yes, e ne scegliamo una delle due (hanno lo stesso valore). Andiamo avanti come nel Decision Tree con le altre righe del dataset e le nuove regole e le combino tutte. Però non devo renderlo troppo specifico, altrimenti non generalizza!
 
-\newpage
-
-\subsubsection{Overfitting}
+\subsection{Overfitting}
 Uno dei problemi più importanti dell'intero ML e consiste in un modello che performa bene sui dati di training, ma non è capace di generalizzare, sbagliando completamente nel test. Questo succede per dataset troppo specifici, o per noise all'interno di essi che il modello interpreta come pattern e impara. Il modello in sè non è capace di distinguere questi noises. 
 \\
 \textbf{Esempio.} Immaginiamo di allenare un modello a prevedere da un dataset, l'altezza di un cittadino cinese dalle sue caratteristiche. Il test però lo eseguiamo su un dataset di persone provenienti dalla Svezia. Sicuramente, l'accuracy sarà bassissima, ma questo è dovuto non al modello scelto, ma alla scelta del dataset su cui efftuare train e test.
@@ -236,7 +234,26 @@ Ma sappiamo che la seconda è impossibile da garantire, basta guardare il datase
 
 \newpage
 
-\subsubsection{Naive Bayes Classifier}
+\subsection{Instance based learning}
+Viene descritta come la più semplice forma di apprendimento: non si impara nulla, si fa tutto a memoria, con una funzione di istanza (quanto l'elemento A è simile a B o C ecc..) un esempio sono gli algoritmi simili al nearest neighbours. 
+\\ 
+Sono una serie di modelli molto utilizzati per fare profilazione e cercare le preferenze di un utente. La tipologia più conosciuta di instance learning è il nearest neighbors, un modello dove cerco "tutte le istanze più vicine". Ci sono alcuni accorgimenti da fare per poterlo utilizzare, uno di essi è la necessità di normalizzare il dataset altrimenti overfitta. 
+
+\subsection{One rule algorithm}
+Inventato nel '94, è l'algoritmo più banale di tutti. Da un dataset, estrae una sola regola. L'idea alla base è molto semplice, tuttavia non è da sottovalutare: spesso le idee semplici sono quelle più efficaci.
+\\
+\begin{figure}[th]
+    \centering
+    \includegraphics[scale=0.5]{ML/img/onerule.png}
+\end{figure}
+\\
+Analizziamo questo dataset e il potenziale risultato del one rule. Immaginiamo di dover prevedere se giocare a calcetto, sulla base del meteo; contiamo per ogni l'attributo \texttt{Outlook} i valori distinti di play. Ad esempio, per \texttt{Outlook} = \texttt{Sunny} notiamo che è \texttt{No} 3 volte su 5, il che significa che commette 2 errori su 5. E li contiamo per ogni valore di ogni feature. Alla fine prendiamo come rule la feature su cui commettiamo meno errori totali: in questo esempio, una a scelta tra \texttt{Humidity} e \texttt{Outlook}.
+\\
+\textbf{Quale errore commette il one rule?} Il motivo per cui è poco utilizzato, risiede proprio nella sua semplicità. Seguendo il suo modus operandi, è utile notare che: per valori numerici ad intervalli grandi, diventa impossibile contare gli errori. Ad esempio, se aggiungessimo l'attributo temperatura, con tanti valori di temperature in un intervallo compreso tra i 15 e i 25 gradi, lui imparerebbe una rappresentazione troppo dettagliata, causando $overfitting$.
+
+\newpage
+
+\subsection{Naive Bayes Classifier}
 Come funziona un classificatore probabilistico? Calcola la probabilità che un evento si verifichi, basandosi sulla distribuzione di probabilità del dataset di training. 
 \\
 \begin{figure}[th]
@@ -271,7 +288,7 @@ E ottengo lo score delle due risposte. Eseguo quindi una classificazione probabi
 
 \newpage
 
-\subsection{Regola di Bayes}
+\subsubsection{Regola di Bayes}
 \begin{center}
     \begin{math}
         Pr[ H | E] = \frac{Pr[E | H] Pr[H]}{Pr[E]}
@@ -304,5 +321,16 @@ Il classificatore Bayesiano sfrutta questo concetto. Il Naive Bayes invece va ol
 \\
 \textbf{Come posso evitare questo problema?} Aggiungo 1 al conteggio per ogni combinazione valore attributo-classe. 
 
-\newpage
+\newpage    
 
+\subsection{Unsupervised Learning}
+\subsubsection{Clustering}
+Si parla di learning unsupervised quando non si utilizzano label. Quindi non è nota la classe da predire. Quello che avviene nel clustering quindi è una divisione naturale delle istanze in gruppi. 
+\\
+Come funziona l'algoritmo gerarchico? Finchè non ci fermiamo, cerchiamo i migliori due cluster da unire e li uniamo. Altrimenti esiste anche probabilistico: basta trovare la probabilità che un certo punto appartenga al cluster i-esimo. Come si trova la distanza tra due cluster? Sfrutti i loro centroidi (sono punti medi) e cerchi quelli più vicini. Possiamo capire quanti cluster creare, basta organizzare un dendrogramma e separarlo dove avviene la separazione principale. 
+\\
+\begin{figure}[th]
+    \centering
+    \includegraphics[scale=0.5]{ML/img/dendrogramma.png}
+\end{figure}
+\\
