@@ -333,4 +333,69 @@ Come funziona l'algoritmo gerarchico? Finchè non ci fermiamo, cerchiamo i migli
     \centering
     \includegraphics[scale=0.5]{ML/img/dendrogramma.png}
 \end{figure}
+
+\newpage
+
+\subsection{Come trovo un modello che non overfitta?}
+Per calcolare l'overfitting del modello, separiamo il dataset in due parti, training e test. 
 \\
+Per vedere una misura dell'overfitting, basta guardare la misura dell'errore, sia nella simulazione reale che durante la fase di training. Per capire effettivamente quando un modello overfitta, è necessario guardare la sua complessità: più un modello è complesso, più \textit{tenderà ad overfittare.}
+\\
+Il Decision tree è un modello che tende ad overfittare: se immaginiamo un albero molto dettagliato, con tanti rami e nodi che descrivano ogni possibile feature del dataset, allora overfitteremo sul training set.
+
+\subsection{Come posso aiutare il modello contro l'overfitting?}
+Si può suddividere il dataset in tre parti: train, validation, e test set. Il validation è utilizzato per un test prima del test, poi lo traino nuovamente su anche quello. In questo modo separo correttamente training e testing ma soprattutto posso usare i validation data per aggiornare i parametri di learning. 
+\\
+Esiste un altro metodo chiamato comunemente \textbf{Cross Validation}. Che spiegato molto brevemente, consiste nella suddivisione del dataset in k subsets grandi uguali. A turno, uno solo viene usato per il testing, gli altri per il training. Anche questa tipologia di struttura per la suddivisione del dataset viene utilizzata per fare il tuning dei parametri del modello.
+
+\subsection{Valutazione del modello}
+Come si misura l'errore in un modello di ML? Si usa una matrice chiamata \textit{Confusion Matrix} o matrice di confusione; essa mette a confronto le predizioni corrette e quelle sbagliate, toccando il tema dei falsi positivi e falsi negativi, distinguendo tra i due tipi di errore. 
+\\
+\begin{figure}[th]
+    \centering
+    \includegraphics[scale=0.5]{ML/img/conf_matrix.png}
+\end{figure}
+\\
+Sulla base di questa tabella, possiamo definire due parametri:
+\begin{center}
+    $TP_{rate}$ = $\frac{TP}{TP + FN}$
+    \\[2ex]
+    $FN_{rate}$ = $\frac{FN}{TN + FP}$
+\end{center}
+Che rappresentano i rate dei veri positivi e dei falsi negativi. Quindi sarebbero l'accuracy sul Sì, e l'altro è 1 - l'accuracy sulla predizione di No.
+\\
+Attenzione! Un errore di falso positivo e di falso negativo hanno pesi diversi, e dipendono molto dall'ambiente in cui ci troviamo. 
+\\ 
+Altre misure che posso ricavare dalla confusion matrix sono la \textit{precision} e la \textit{recall}:
+\begin{center}
+    $precision$ = $\frac{TP}{TP + FP}$
+    \\[2ex]
+    $recall$ = $\frac{TP}{TP + FN}$
+\end{center}
+La precision è un valutare quante di quelle che sono positive, lo sono effettivamente. Non è sufficiente, serve anche la recall che misura quali sono quelli effettivamente scoperti come positivi?
+
+\newpage
+
+\subsubsection{F1 score}
+Le due misure indicate nel punto precedente possono essere combinate in una unica: 
+\begin{center}
+   $F1_{score}$ = $\frac{(\beta^2 + 1) PR}{\beta ^2 P + R}$
+\end{center}
+Dove il parametro $\beta$ funge da ago della bilancia: quando è $<$ 1, prevale la precision, quando è maggiore la recall e se è uguale vengono considerate in egual modo. 
+
+\subsubsection{Multilabel Confusion Matrix}
+Quello visto finora è il caso di classificazione binaria, un conto dei Sì e No. Ma se la label da predire fosse a più valori, quindi non ci trovassimo più in un caso binario, il tipo di matrice sarebbe il seguente:
+\\
+\begin{figure}[th]
+    \centering
+    \includegraphics[scale=0.55]{ML/img/multilabel matrix.png}
+\end{figure}
+\\
+Dove precision e recall sono calcolati singolarmente per ogni valore. Questo sistema può essere utilizzato per valutare la logistic regression. 
+
+\subsection{Ensemble learning}
+Normalmente i modelli visti si combinano. Ed esistono 2 modi per metterli insieme.
+\subsubsection{Bagging}
+Separo il dataset in \textit{bags.} Immaginiamo di avere n bags, utilizziamo n modelli e li applico in parallelo su una sola frazione del dataset. 
+\subsubsection{Boosting} 
+Se il bagging era in parallelo, questo consiste nel mettere in serie i modelli, e quindi tutti i dati passano all'interno di un modello dopo l'altro.
