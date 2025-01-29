@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.21)  24 JAN 2025 23:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.21)  29 JAN 2025 16:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1049,8 +1049,7 @@ Package: afterpage 2023/07/04 v1.08 After-Page Package (DPC)
 )
 \@quotelevel=\count496
 \@quotereset=\count497
-
-No file main.aux.
+ (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
@@ -1071,6 +1070,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1185,14 +1185,15 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 
 [1
 
-{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) [2]
-No file main.toc.
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) [2] (./main.toc
+
+[3])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
 
 
-[3]
+[4]
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -1205,7 +1206,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.9 \end{titlepage}
                     [1]) (./MapReduce/MapReduce.tex
-<MapReduce/img/GoogleExample.png, id=28, 678.28406pt x 490.08093pt>
+<MapReduce/img/GoogleExample.png, id=187, 678.28406pt x 490.08093pt>
 File: MapReduce/img/GoogleExample.png Graphic file (type png)
 <use MapReduce/img/GoogleExample.png>
 Package pdftex.def Info: MapReduce/img/GoogleExample.png  used on input line 6.
@@ -1218,7 +1219,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.17 \newpage
               [1 <./MapReduce/img/GoogleExample.png>]
-<MapReduce/img/MapReduce.png, id=39, 830.35219pt x 435.12563pt>
+<MapReduce/img/MapReduce.png, id=194, 830.35219pt x 435.12563pt>
 File: MapReduce/img/MapReduce.png Graphic file (type png)
 <use MapReduce/img/MapReduce.png>
 Package pdftex.def Info: MapReduce/img/MapReduce.png  used on input line 42.
@@ -1231,7 +1232,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has b
                    \relax 
 l.48 \newpage
               [2 <./MapReduce/img/MapReduce.png>]
-<MapReduce/img/DFS.png, id=49, 805.50937pt x 590.95781pt>
+<MapReduce/img/DFS.png, id=203, 805.50937pt x 590.95781pt>
 File: MapReduce/img/DFS.png Graphic file (type png)
 <use MapReduce/img/DFS.png>
 Package pdftex.def Info: MapReduce/img/DFS.png  used on input line 56.
@@ -1244,20 +1245,25 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has b
                    \relax 
 l.71 \newpage
               [3{c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./MapReduce/img/DFS.png>]
-<MapReduce/img/MapReduceParallel.png, id=56, 633.11531pt x 434.37282pt>
+<MapReduce/img/MapReduceParallel.png, id=209, 633.11531pt x 434.37282pt>
 File: MapReduce/img/MapReduceParallel.png Graphic file (type png)
 <use MapReduce/img/MapReduceParallel.png>
 Package pdftex.def Info: MapReduce/img/MapReduceParallel.png  used on input line 76.
 (pdftex.def)             Requested size: 316.55687pt x 217.18587pt.
-<MapReduce/img/Combiners.png, id=57, 633.11531pt x 246.1697pt>
+<MapReduce/img/Combiners.png, id=210, 633.11531pt x 246.1697pt>
 File: MapReduce/img/Combiners.png Graphic file (type png)
 <use MapReduce/img/Combiners.png>
 Package pdftex.def Info: MapReduce/img/Combiners.png  used on input line 84.
 (pdftex.def)             Requested size: 316.55687pt x 123.08453pt.
 
 
-[4 <./MapReduce/img/MapReduceParallel.png> <./MapReduce/img/Combiners.png>]
-<MapReduce/img/MatrixVector.png, id=67, 634.16925pt x 406.51875pt>
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.99 \subsubsection
+                   {Matrix-Vector multiplication - Vettore che sta in memoria} [4 <./MapReduce/img/MapReduceParallel.png> <./MapReduce/img/Combiners.png>]
+<MapReduce/img/MatrixVector.png, id=216, 634.16925pt x 406.51875pt>
 File: MapReduce/img/MatrixVector.png Graphic file (type png)
 <use MapReduce/img/MatrixVector.png>
 Package pdftex.def Info: MapReduce/img/MatrixVector.png  used on input line 110.
@@ -1265,7 +1271,7 @@ Package pdftex.def Info: MapReduce/img/MatrixVector.png  used on input line 110.
 
 
 [5 <./MapReduce/img/MatrixVector.png>]
-<MapReduce/img/MatrixSep.png, id=79, 334.24875pt x 286.06876pt>
+<MapReduce/img/MatrixSep.png, id=226, 334.24875pt x 286.06876pt>
 File: MapReduce/img/MatrixSep.png Graphic file (type png)
 <use MapReduce/img/MatrixSep.png>
 Package pdftex.def Info: MapReduce/img/MatrixSep.png  used on input line 129.
@@ -1273,7 +1279,7 @@ Package pdftex.def Info: MapReduce/img/MatrixSep.png  used on input line 129.
 
 
 [6 <./MapReduce/img/MatrixSep.png>]
-<MapReduce/img/MatrixMolt.png, id=90, 349.90726pt x 180.675pt>
+<MapReduce/img/MatrixMolt.png, id=232, 349.90726pt x 180.675pt>
 File: MapReduce/img/MatrixMolt.png Graphic file (type png)
 <use MapReduce/img/MatrixMolt.png>
 Package pdftex.def Info: MapReduce/img/MatrixMolt.png  used on input line 199.
@@ -1290,12 +1296,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.9 \end{titlepage}
                     [1]) (./ML/ML.tex
-<ML/img/Example.png, id=118, 529.37775pt x 333.04425pt>
+<ML/img/Example.png, id=252, 529.37775pt x 333.04425pt>
 File: ML/img/Example.png Graphic file (type png)
 <use ML/img/Example.png>
 Package pdftex.def Info: ML/img/Example.png  used on input line 12.
 (pdftex.def)             Requested size: 185.28499pt x 116.56723pt.
-<ML/img/MLPipeline.png, id=119, 404.10976pt x 153.57375pt>
+<ML/img/MLPipeline.png, id=253, 404.10976pt x 153.57375pt>
 File: ML/img/MLPipeline.png Graphic file (type png)
 <use ML/img/MLPipeline.png>
 Package pdftex.def Info: ML/img/MLPipeline.png  used on input line 43.
@@ -1314,7 +1320,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<ML/img/sup unsup.png, id=135, 1284.8pt x 419.5675pt>
+<ML/img/sup unsup.png, id=263, 1284.8pt x 419.5675pt>
 File: ML/img/sup unsup.png Graphic file (type png)
 <use ML/img/sup unsup.png>
 Package pdftex.def Info: ML/img/sup unsup.png  used on input line 92.
@@ -1322,12 +1328,12 @@ Package pdftex.def Info: ML/img/sup unsup.png  used on input line 92.
 
 
 [11 <./ML/img/sup unsup.png>]
-<ML/img/class lineare.png, id=144, 429.605pt x 262.9825pt>
+<ML/img/class lineare.png, id=271, 429.605pt x 262.9825pt>
 File: ML/img/class lineare.png Graphic file (type png)
 <use ML/img/class lineare.png>
 Package pdftex.def Info: ML/img/class lineare.png  used on input line 117.
 (pdftex.def)             Requested size: 107.40099pt x 65.74545pt.
-<ML/img/hyperplane.png, id=145, 963.6pt x 542.025pt>
+<ML/img/hyperplane.png, id=272, 963.6pt x 542.025pt>
 File: ML/img/hyperplane.png Graphic file (type png)
 <use ML/img/hyperplane.png>
 Package pdftex.def Info: ML/img/hyperplane.png  used on input line 125.
@@ -1335,7 +1341,7 @@ Package pdftex.def Info: ML/img/hyperplane.png  used on input line 125.
 
 
 [12 <./ML/img/class lineare.png> <./ML/img/hyperplane.png (PNG copy)>]
-<ML/img/decision tree.png, id=154, 670.30424pt x 411.33675pt>
+<ML/img/decision tree.png, id=278, 670.30424pt x 411.33675pt>
 File: ML/img/decision tree.png Graphic file (type png)
 <use ML/img/decision tree.png>
 Package pdftex.def Info: ML/img/decision tree.png  used on input line 137.
@@ -1343,7 +1349,7 @@ Package pdftex.def Info: ML/img/decision tree.png  used on input line 137.
 
 
 [13 <./ML/img/decision tree.png>]
-<ML/img/dt_scelta.png, id=160, 587.796pt x 472.76625pt>
+<ML/img/dt_scelta.png, id=283, 587.796pt x 472.76625pt>
 File: ML/img/dt_scelta.png Graphic file (type png)
 <use ML/img/dt_scelta.png>
 Package pdftex.def Info: ML/img/dt_scelta.png  used on input line 169.
@@ -1351,7 +1357,7 @@ Package pdftex.def Info: ML/img/dt_scelta.png  used on input line 169.
 
 
 [14 <./ML/img/dt_scelta.png>]
-<ML/img/dataset_lenses.png, id=166, 614.89725pt x 330.63525pt>
+<ML/img/dataset_lenses.png, id=288, 614.89725pt x 330.63525pt>
 File: ML/img/dataset_lenses.png Graphic file (type png)
 <use ML/img/dataset_lenses.png>
 Package pdftex.def Info: ML/img/dataset_lenses.png  used on input line 215.
@@ -1359,7 +1365,7 @@ Package pdftex.def Info: ML/img/dataset_lenses.png  used on input line 215.
 
 
 [15 <./ML/img/dataset_lenses.png>]
-<ML/img/onerule.png, id=175, 717.27975pt x 418.56375pt>
+<ML/img/onerule.png, id=293, 717.27975pt x 418.56375pt>
 File: ML/img/onerule.png Graphic file (type png)
 <use ML/img/onerule.png>
 Package pdftex.def Info: ML/img/onerule.png  used on input line 247.
@@ -1367,12 +1373,12 @@ Package pdftex.def Info: ML/img/onerule.png  used on input line 247.
 
 
 [16 <./ML/img/onerule.png>]
-<ML/img/prob class.png, id=182, 837.72975pt x 229.45724pt>
+<ML/img/prob class.png, id=298, 837.72975pt x 229.45724pt>
 File: ML/img/prob class.png Graphic file (type png)
 <use ML/img/prob class.png>
 Package pdftex.def Info: ML/img/prob class.png  used on input line 261.
 (pdftex.def)             Requested size: 418.86385pt x 114.72833pt.
-<ML/img/new day.png, id=183, 471.56175pt x 230.66174pt>
+<ML/img/new day.png, id=299, 471.56175pt x 230.66174pt>
 File: ML/img/new day.png Graphic file (type png)
 <use ML/img/new day.png>
 Package pdftex.def Info: ML/img/new day.png  used on input line 268.
@@ -1387,7 +1393,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 310--312
 
 
 [18]
-<ML/img/dendrogramma.png, id=196, 853.1875pt x 565.11125pt>
+<ML/img/dendrogramma.png, id=310, 853.1875pt x 565.11125pt>
 File: ML/img/dendrogramma.png Graphic file (type png)
 <use ML/img/dendrogramma.png>
 Package pdftex.def Info: ML/img/dendrogramma.png  used on input line 334.
@@ -1395,7 +1401,7 @@ Package pdftex.def Info: ML/img/dendrogramma.png  used on input line 334.
 
 
 [19 <./ML/img/dendrogramma.png>]
-<ML/img/conf_matrix.png, id=204, 651.03226pt x 168.02776pt>
+<ML/img/conf_matrix.png, id=316, 651.03226pt x 168.02776pt>
 File: ML/img/conf_matrix.png Graphic file (type png)
 <use ML/img/conf_matrix.png>
 Package pdftex.def Info: ML/img/conf_matrix.png  used on input line 356.
@@ -1403,7 +1409,7 @@ Package pdftex.def Info: ML/img/conf_matrix.png  used on input line 356.
 
 
 [20 <./ML/img/conf_matrix.png>]
-<ML/img/multilabel matrix.png, id=212, 528.7755pt x 246.9225pt>
+<ML/img/multilabel matrix.png, id=322, 528.7755pt x 246.9225pt>
 File: ML/img/multilabel matrix.png Graphic file (type png)
 <use ML/img/multilabel matrix.png>
 Package pdftex.def Info: ML/img/multilabel matrix.png  used on input line 391.
@@ -1418,7 +1424,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.9 \end{titlepage}
                     [1]) (./FrequentItems/FrequentItems.tex
-<FrequentItems/img/frq_itm.png, id=225, 274.02374pt x 137.91525pt>
+<FrequentItems/img/frq_itm.png, id=330, 274.02374pt x 137.91525pt>
 File: FrequentItems/img/frq_itm.png Graphic file (type png)
 <use FrequentItems/img/frq_itm.png>
 Package pdftex.def Info: FrequentItems/img/frq_itm.png  used on input line 6.
@@ -1435,7 +1441,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 
 
 [24]
-<FrequentItems/img/apriori.png, id=241, 714.2685pt x 166.82326pt>
+<FrequentItems/img/apriori.png, id=340, 714.2685pt x 166.82326pt>
 File: FrequentItems/img/apriori.png Graphic file (type png)
 <use FrequentItems/img/apriori.png>
 Package pdftex.def Info: FrequentItems/img/apriori.png  used on input line 92.
@@ -1445,7 +1451,7 @@ Package pdftex.def Info: FrequentItems/img/apriori.png  used on input line 92.
 [25 <./FrequentItems/img/apriori.png>]
 
 [26]
-<FrequentItems/img/SONalgorithm.png, id=256, 226.446pt x 268.00125pt>
+<FrequentItems/img/SONalgorithm.png, id=351, 226.446pt x 268.00125pt>
 File: FrequentItems/img/SONalgorithm.png Graphic file (type png)
 <use FrequentItems/img/SONalgorithm.png>
 Package pdftex.def Info: FrequentItems/img/SONalgorithm.png  used on input line 132.
@@ -1453,87 +1459,133 @@ Package pdftex.def Info: FrequentItems/img/SONalgorithm.png  used on input line 
 
 
 [27 <./FrequentItems/img/SONalgorithm.png>]
-<FrequentItems/img/pipeline.png, id=262, 708.84825pt x 387.24675pt>
+<FrequentItems/img/pipeline.png, id=356, 708.84825pt x 387.24675pt>
 File: FrequentItems/img/pipeline.png Graphic file (type png)
 <use FrequentItems/img/pipeline.png>
 Package pdftex.def Info: FrequentItems/img/pipeline.png  used on input line 150.
 (pdftex.def)             Requested size: 354.42326pt x 193.6229pt.
 
-./FrequentItems/FrequentItems.tex:166: Missing $ inserted.
-<inserted text> 
-                $
-l.166 DISCORSO MATRICCICICICIC_
-                               
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
-./FrequentItems/FrequentItems.tex:167: Missing { inserted.
+[28 <./FrequentItems/img/pipeline.png>]
+<FrequentItems/img/shingling.png, id=361, 203.5605pt x 296.307pt>
+File: FrequentItems/img/shingling.png Graphic file (type png)
+<use FrequentItems/img/shingling.png>
+Package pdftex.def Info: FrequentItems/img/shingling.png  used on input line 172.
+(pdftex.def)             Requested size: 101.78pt x 148.15314pt.
+
+
+[29 <./FrequentItems/img/shingling.png>]
+<FrequentItems/img/minhashing.png, id=367, 584.78474pt x 395.67825pt>
+File: FrequentItems/img/minhashing.png Graphic file (type png)
+<use FrequentItems/img/minhashing.png>
+Package pdftex.def Info: FrequentItems/img/minhashing.png  used on input line 193.
+(pdftex.def)             Requested size: 292.39165pt x 197.83864pt.
+<FrequentItems/img/c1c2.png, id=368, 153.57375pt x 162.00525pt>
+File: FrequentItems/img/c1c2.png Graphic file (type png)
+<use FrequentItems/img/c1c2.png>
+Package pdftex.def Info: FrequentItems/img/c1c2.png  used on input line 208.
+(pdftex.def)             Requested size: 76.78668pt x 81.00241pt.
+
+
+[30 <./FrequentItems/img/minhashing.png> <./FrequentItems/img/c1c2.png>]
+<FrequentItems/img/matrixa.png, id=373, 199.34476pt x 158.994pt>
+File: FrequentItems/img/matrixa.png Graphic file (type png)
+<use FrequentItems/img/matrixa.png>
+Package pdftex.def Info: FrequentItems/img/matrixa.png  used on input line 226.
+(pdftex.def)             Requested size: 99.67212pt x 79.4968pt.
+
+
+[31 <./FrequentItems/img/matrixa.png>]
+<FrequentItems/img/lsh.png, id=378, 448.67625pt x 396.88275pt>
+File: FrequentItems/img/lsh.png Graphic file (type png)
+<use FrequentItems/img/lsh.png>
+Package pdftex.def Info: FrequentItems/img/lsh.png  used on input line 238.
+(pdftex.def)             Requested size: 224.33757pt x 198.44089pt.
+<FrequentItems/img/graph.png, id=379, 473.97075pt x 372.79276pt>
+File: FrequentItems/img/graph.png Graphic file (type png)
+<use FrequentItems/img/graph.png>
+Package pdftex.def Info: FrequentItems/img/graph.png  used on input line 252.
+(pdftex.def)             Requested size: 236.98479pt x 186.39592pt.
+
+
+[32 <./FrequentItems/img/lsh.png> <./FrequentItems/img/graph.png>]) (./Text Analysis/FirstPage.tex
+
+[33]
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
-                   \tex_par:D 
-l.167 
-      
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-./FrequentItems/FrequentItems.tex:167: Missing $ inserted.
-<inserted text> 
-                $
-l.167 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./FrequentItems/FrequentItems.tex:167: Missing } inserted.
-<inserted text> 
-                }
-l.167 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+                   \relax 
+l.9 \end{titlepage}
+                    [1]) (./Text Analysis/TextAnalysis.tex
+<Text Analysis/img/bagofwords.png, id=391, 587.19376pt x 281.25075pt>
+File: Text Analysis/img/bagofwords.png Graphic file (type png)
+<use Text Analysis/img/bagofwords.png>
+Package pdftex.def Info: Text Analysis/img/bagofwords.png  used on input line 35.
+(pdftex.def)             Requested size: 293.59616pt x 140.62502pt.
 
 
+[35]
+<Text Analysis/img/vector space retrieval.png, id=397, 549.85425pt x 258.36525pt>
+File: Text Analysis/img/vector space retrieval.png Graphic file (type png)
+<use Text Analysis/img/vector space retrieval.png>
+Package pdftex.def Info: Text Analysis/img/vector space retrieval.png  used on input line 47.
+(pdftex.def)             Requested size: 274.92644pt x 129.1823pt.
 
-[28 <./FrequentItems/img/pipeline.png>])
 
-[29] (./main.aux)
+[36 <./Text Analysis/img/bagofwords.png> <./Text Analysis/img/vector space retrieval.png>]
+
+[37]
+<Text Analysis/img/example.png, id=406, 666.69075pt x 354.72525pt>
+File: Text Analysis/img/example.png Graphic file (type png)
+<use Text Analysis/img/example.png>
+Package pdftex.def Info: Text Analysis/img/example.png  used on input line 87.
+(pdftex.def)             Requested size: 333.34456pt x 177.36218pt.
+
+
+[38 <./Text Analysis/img/example.png>]
+<Text Analysis/img/bigrams.png, id=411, 663.07726pt x 245.11575pt>
+File: Text Analysis/img/bigrams.png Graphic file (type png)
+<use Text Analysis/img/bigrams.png>
+Package pdftex.def Info: Text Analysis/img/bigrams.png  used on input line 140.
+(pdftex.def)             Requested size: 298.382pt x 110.30106pt.
+<Text Analysis/img/laplacesmoothing.png, id=412, 765.45975pt x 211.38976pt>
+File: Text Analysis/img/laplacesmoothing.png Graphic file (type png)
+<use Text Analysis/img/laplacesmoothing.png>
+Package pdftex.def Info: Text Analysis/img/laplacesmoothing.png  used on input line 147.
+(pdftex.def)             Requested size: 344.4537pt x 95.1245pt.
+
+
+[39 <./Text Analysis/img/bigrams.png> <./Text Analysis/img/laplacesmoothing.png>]
+<Text Analysis/img/compare.png, id=418, 607.67026pt x 437.83575pt>
+File: Text Analysis/img/compare.png Graphic file (type png)
+<use Text Analysis/img/compare.png>
+Package pdftex.def Info: Text Analysis/img/compare.png  used on input line 164.
+(pdftex.def)             Requested size: 273.44908pt x 197.02426pt.
+
+
+[40 <./Text Analysis/img/compare.png>]) (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48055 strings out of 473206
- 1054888 string characters out of 5720440
- 2031402 words of memory out of 5000000
- 70264 multiletter control sequences out of 15000+600000
- 575447 words of font info for 164 fonts, out of 8000000 for 9000
+ 48205 strings out of 473206
+ 1058951 string characters out of 5720440
+ 2039183 words of memory out of 5000000
+ 70367 multiletter control sequences out of 15000+600000
+ 576110 words of font info for 172 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,11n,122p,3270b,803s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on main.pdf (36 pages, 4538931 bytes).
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on main.pdf (48 pages, 6828085 bytes).
 PDF statistics:
- 567 PDF objects out of 1000 (max. 8388607)
- 455 compressed objects within 5 object streams
- 100 named destinations out of 1000 (max. 500000)
- 27799 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 761 PDF objects out of 1000 (max. 8388607)
+ 621 compressed objects within 7 object streams
+ 121 named destinations out of 1000 (max. 500000)
+ 27947 words of extra memory for PDF output out of 29859 (max. 10000000)
 

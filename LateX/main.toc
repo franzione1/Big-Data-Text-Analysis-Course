@@ -63,3 +63,14 @@
 \contentsline {subsection}{\numberline {4.3}Finding Similar Items}{28}{subsection.4.3}%
 \contentsline {subsubsection}{\numberline {4.3.1}Shingling}{28}{subsubsection.4.3.1}%
 \contentsline {subsubsection}{\numberline {4.3.2}Minhashing}{29}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Minhashing optimization}{31}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Locality-sensitive hashing}{31}{subsubsection.4.3.4}%
+\contentsline {section}{\numberline {5}Text Analysis}{35}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Text Data Access}{35}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Text Retrieval}{35}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Document Selection vs Document Ranking}{35}{subsubsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.3}Retrieval Models}{36}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Vector Space Retrieval Model}{36}{subsubsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.4}Probabilistic Retrieval Models}{38}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Text statistics: Zipf's Law}{38}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Language Model}{38}{subsubsection.5.4.2}%

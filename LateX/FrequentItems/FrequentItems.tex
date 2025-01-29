@@ -163,11 +163,105 @@ Se prendiamo k uguale a 3, otteniamo come shingle ogg, ggi, gi\_ ecc...
 \\
 \textbf{Quante righe posso fare con k=3?} Si calcolano come i caratteri che scelgo, elevati alla k: $(caratteri)^k$ e devo fare attenzione perchè per k troppo elevati, non staranno mai in memoria. 
 
-DISCORSO MATRICCICICICIC_
-
 \newpage
 
+Se voglio confrontare due documenti, andrò a scrivere: 
+\\
+\begin{figure}[th]
+    \centering
+    \includegraphics[scale=0.5]{FrequentItems/img/shingling.png}
+\end{figure}
+\\
+Dove tutti quei 0 e 1 rappresentano gli shingle per ogni documento, calcolerò la similarità di Jaccard facendo numero elementi in comune diviso numero elementi totali in esame. Stabilisco una soglia, se la superano sono simili. Ma come posso fare se devo confrontare molti documenti? 
 \subsubsection{Minhashing}
 Seconda tecnica: tecnica per mantenere la similarità con una tabella ridotta. Riduce il numero di righe mettendo per ogni vettore della tabella originale una signature o firma che mantiene la similarità. 
 \\
-Prendiamo il documento originale: 
+Un primo approccio, tornando all'esempio precedente della tabella in alto: con valori booleani, posso trattarli da tali, quindi calcolarne il valore in decimale per ogni riga (ad esempio, 101 sarebbe 5) e riduco tanto il numero di righe (attenzione! la compattazione avviene lungo la colonna, non lungo le righe quindi in verticale!).
+\\
+Ma c'è un problema. Compattare tra di loro degli shingle, potrebbe crearmi combinazioni di lettere improbabili e trovare due documenti con tale sequenza simile diventa impossibile.
+\\
+\textbf{Altra soluzione.} Torniamo ad utilizzare la funzione di hash. Numeriamo le righe: voglio convertire quella matrice in una matrice più corta. Facciamo un esempio con una matrice da un milione di righe, voglio trasformarla in una matrice da mille righe. Dopo aver dato un indice ad ogni riga, lo divido per mille e calcolo il resto; se in quel punto della matrice poi c'è un uno, nella matrice ridotta ci sarà un uno. Guardando sempre l'immagine in alto: l'elemento 1 diviso mille fa 0 con resto di 1. Quindi nella nuova matrice andrò a mettermi nella posizione 1, e ora devo guardare se è uno 0 o un 1 nella prima matrice: è 1. Quindi nella posizione 1 della nuova matrice andrò a mettere 1. 
+\\
+La stessa identica cosa accadrà per il valore 1001, ad esempio, finirà anche lui nella posizione 1. Quindi sto mappando all'interno della stessa cella, più shingle; ciò genera errore. Vuole dire che se viene mappato all'interno della cella uno shingle frequent come può essere 'to' in lingua italiana, insieme allo shingle 'zy' stiamo dando valore 1 anche ad uno shingle non-frequent, ma non è un problema dato che stiamo accorciando il numero di righe.
+
+\newpage
+
+\textbf{Minhashing.} Sfruttiamo quindi il concetto di hashing per trovare una matrice ridotta, che mantenga la similarità di Jaccard. Creiamo le signature: 
+\\
+\begin{figure}[th]
+    \centering
+    \includegraphics[scale=0.5]{FrequentItems/img/minhashing.png}
+\end{figure}
+\\
+Costruiamo una permutazione delle righe, le righe vengono cioè rimescolate (nell'immagine, l'ordine permutato è dato dalla colonna rossa, gialla e azzurra). Fatta la permutazione, vado a costruire una matrice di signature in cui il numero che ho è la prima riga in cui compare un 1 in tale permutazione. Ad esempio, nell'immagine, la prima cella della rossa è 2, perchè compare un 1 nella sua riga 2 (che è la riga 1 della matrice originale). Ovviamente le colonne della matrice di signature corrispondono ai documenti, come nella matrice iniziale. Quindi quello che voglio è che la similarità di Jaccard calcolata per i due documenti sia uguale alla probabilità che le signature nella matrice ridotta siano simili:
+\begin{center}
+    \begin{math}
+        SIM_j(D1,D2) = P(S(D1) = S(D2))  
+    \end{math}
+\end{center}
+Dove \textit{S} è la signature. Mi aspetterò che due documenti simili, abbiano signature simili. 
+\\
+\textit{Dimostrazione.} Vogliamo dimostrare la similarità tra due documenti aventi simili signature.
+\\
+\begin{figure}[th]
+    \centering
+    \includegraphics[scale=0.5]{FrequentItems/img/c1c2.png}
+\end{figure}
+\\
+Distinguo tra righe X (entrambi 1) righe Y (diversi) e righe Z (entrambi 0). Sappiamo che un calcolo possibile è ridurre il numero di righe eliminando quelle di tipo Z inutili nel calcolo della similarità. Al numeratore della similarità di Jaccard avremo X dove sono simili e al denominatore le righe X + Y. 
+\\
+Consideriamo una permutazione, e non calcoliamo le righe Z. Qual è la probabilità togliendo gli Z di avere una X prima di una riga Y? (ricordati come viene costruita la matrice di signature) Essa è: 
+\begin{center}
+    $\frac{X}{X+Y}$ 
+\end{center}
+Ma se abbiamo una X prima delle altre, cosa succede nel minhashing? Che i due documenti avevano lo stesso valore. Quindi la probabilità che i documenti avessero lo stesso numero, è pari alla similarità tra i due documenti.
+
+\subsubsection{Minhashing optimization}
+A lezione sono stati spiegati un paio di metodi per automatizzare e migliorare il processo di Minhashing, qui di seguito ne vediamo uno.
+\\
+Dopo la permutazione, noi abbiamo un numero di righe ridotto, con un valore di similarità uguale. Non è necessario permutare tutte le righe, posso anche semplicemente fare una permutazione di k righe dove k è minore del numero di righe n. L'unico caso in cui questa operazione può risultare deleteria, sarebbe nel caso in cui alcuni valori non dovessero trovare una corrispondenza; ma per la costrizione della matrice di hashing, in corrispondenza di quei valori troveremmo allora un infinito, che è comunque diverso da qualunque altro valore nella matrice:
+\\
+\begin{figure}[th]
+    \centering
+    \includegraphics[scale=0.5]{FrequentItems/img/matrixa.png}
+\end{figure}
+\\
+Se considerassi k = 3, quel 4 non ci sarebbe, e rimarrebbe comunque un elemento che non porta informazione essendo diverso da tutti gli altri. Potrebbe valere 4 o 1000 che non mi interesserebbe. C'è però un problema. Se scelgo un k troppo basso (ad esempio nella matrice qua sopra un valore critico potrebbe essere k=2) la matrice potrebbe perdere troppe informazioni e con troppi valori ad infinito non posso lavorarci perchè potrebbe capitare che se due documenti erano diversi, considerando k molto basso potrebbero perdere molti elementi diversi che verrebbero sostituiti da degli infiniti diventando uguali e trasformando documenti non simili in documenti simili. 
+
+\subsubsection{Locality-sensitive hashing}
+Terzo step: ora che ho ridotto le righe, voglio poter fare il numero più ridotto possibile di confronti tra le colonne. Con LSH lavoriamo sulla matrice di minhashing, per poi andare ad utilizzare una funzione che candidi delle coppie. Creo dei gruppi di documenti che possibilmente sono coppie di elementi simili. Come li trovo? Ad esempio potrei calcolare la somma nella matrice di minhashing  dei valori di ogni documento, e quelli con valori di somma simile sono documenti simili. Quale può essere il problema di questa funzione' Che basta che cambi uno dei valori e categorizza diverso (ad esempio documento 2,2,1 come nell'immagine e 2,4,1). Quindi posso avere dei falsi negativi. Mentre i falsi positivi non sono un grosso problema:  i valori di somma possono venire uguali, ma poi vanno osservati sul documento. LSH compensa quindi il problema dei falsi negativi suddividendo in bande la matrice e applicando la funzione di hash ad ogni banda. Basta infatti che anche solo una banda abbia gli stessi valori che vado a finire nello stesso bucket. 
+
+\newpage
+
+\begin{figure}[th]
+    \centering
+    \includegraphics[scale=0.5]{FrequentItems/img/lsh.png}
+\end{figure}
+Questo procedimento diminuisce il costo dei confronti significativamente tanto. 
+\\
+\textbf{Importante.} Due colonne vanno nello stesso bucket quando hanno gli stessi valori ovvero quando i due documenti hanno un'alta similarità di Jaccard. La probabilità che le signatures abbiano lo stesso valore in una banda (e diventino quindi coppie candidate) è:
+\begin{center}
+    \begin{math}
+        1 - (1 - s^r)^b
+    \end{math}
+\end{center}
+Dove s è il valore di similarità, r il numero di righe e b il numero di bande. Quindi possiamo manipolare questo valore: 
+\\
+\begin{figure}[th]
+    \centering
+    \includegraphics[scale=0.5]{FrequentItems/img/graph.png}
+\end{figure}
+\\
+Se uso b e r uguali a 1, la probabilità di essere nello stesso bucket è uguale alla similarità, il che mi va bene ma per ridurre il numero di falsi negativi, devo cambiare funzione. 
+\\
+\textit{Esempi.} Troviamo coppie con s = 0.8, mettiamo b=20 e r=5. Facendo con dei documenti C1 e C2 la cui sim(C1,C2) = 0.3 vedremo:
+\begin{itemize}
+    \item probabilità che C1 e C2 siano identici in una banda = $0.3^5 = 0.00243$
+    \item probabilità che C1 e C2 siano uguali in almeno 1 delle 20 bande = $1-(1-0.00243)^{20} = 0.0474$
+\end{itemize}
+Di conseguenza, la probabilità di avere delle coppie candidate con 0.3 similarità, sarà intorno al 4\%, valore accettabile. Il caso opposto sarebbe pensare alle coppie con 0.8 similarità: 
+\begin{itemize}
+    \item probabilità che C1 e C2 siano identici in una banda = $0.8^5 = 0.328$
+    \item probabilità che C1 e C2 siano uguali in almeno 1 delle 20 bande = $1-(1-0.328)^{20} = 0.00035$ 
+\end{itemize}
+Questo significa che circa 1 coppia su 3000 che esaminiamo (con 0.8 o più di similarità) viene considerata falso negativo. Anche questo errore è più che accettabile (troviamo il 99.965\% di coppie nei documenti simili).
