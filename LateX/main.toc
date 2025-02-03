@@ -74,3 +74,48 @@
 \contentsline {subsection}{\numberline {5.4}Probabilistic Retrieval Models}{38}{subsection.5.4}%
 \contentsline {subsubsection}{\numberline {5.4.1}Text statistics: Zipf's Law}{38}{subsubsection.5.4.1}%
 \contentsline {subsubsection}{\numberline {5.4.2}Language Model}{38}{subsubsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.5}Probabilistic Retrieval Models II}{41}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}The Query Likelihood Retrieval Model}{41}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}Smoothing della probabilità}{42}{subsubsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.6}Search Engine Implementation}{43}{subsection.5.6}%
+\contentsline {subsubsection}{\numberline {5.6.1}Tokenizer e Indexer}{43}{subsubsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.2}Scorer e Learner}{44}{subsubsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.3}Rocchio Feedback}{44}{subsubsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.7}Text classification}{45}{subsection.5.7}%
+\contentsline {subsubsection}{\numberline {5.7.1}Computational Lexical Semantics}{45}{subsubsection.5.7.1}%
+\contentsline {subsubsection}{\numberline {5.7.2}Vector semantics and embeddings}{46}{subsubsection.5.7.2}%
+\contentsline {subsubsection}{\numberline {5.7.3}Sparse vector representations: Term-document matrix}{47}{subsubsection.5.7.3}%
+\contentsline {subsubsection}{\numberline {5.7.4}Sparse vector representations: word-word or term-context matrix}{47}{subsubsection.5.7.4}%
+\contentsline {subsubsection}{\numberline {5.7.5}Positive Pointwise Mutual Information}{47}{subsubsection.5.7.5}%
+\contentsline {subsubsection}{\numberline {5.7.6}Singular Value Decomposition (SVD) e Latent Semantic Analysis (LSA)}{48}{subsubsection.5.7.6}%
+\contentsline {subsubsection}{\numberline {5.7.7}Word2vec}{48}{subsubsection.5.7.7}%
+\contentsline {subsection}{\numberline {5.8}Neural Networks Basics}{49}{subsection.5.8}%
+\contentsline {subsubsection}{\numberline {5.8.1}Feed Forward Neural Networks}{49}{subsubsection.5.8.1}%
+\contentsline {subsection}{\numberline {5.9}Recurrent Neural Networks}{50}{subsection.5.9}%
+\contentsline {subsubsection}{\numberline {5.9.1}Sequence classification}{50}{subsubsection.5.9.1}%
+\contentsline {subsection}{\numberline {5.10}Contextualized embeddings}{50}{subsection.5.10}%
+\contentsline {subsubsection}{\numberline {5.10.1}Transformers}{50}{subsubsection.5.10.1}%
+\contentsline {subsubsection}{\numberline {5.10.2}Multihead attention mechanism}{51}{subsubsection.5.10.2}%
+\contentsline {section}{\numberline {6}Explainable AI}{53}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Interpretability}{53}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Interpretable Models}{53}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Partial Dependence Plot}{54}{subsubsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.3}Permutation Feature Importance}{54}{subsubsection.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.4}Leave-One-Covariate-Out}{54}{subsubsection.6.1.4}%
+\contentsline {subsubsection}{\numberline {6.1.5}Local Surrogate (LIME)}{55}{subsubsection.6.1.5}%
+\contentsline {subsubsection}{\numberline {6.1.6}Counterfactual Explanation}{55}{subsubsection.6.1.6}%
+\contentsline {subsubsection}{\numberline {6.1.7}Shapley Values}{55}{subsubsection.6.1.7}%
+\contentsline {subsubsection}{\numberline {6.1.8}KernelSHAP}{56}{subsubsection.6.1.8}%
+\contentsline {section}{\numberline {7}MLOps}{57}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Project Life-Cycle}{57}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Perchè i progetti di ML falliscono?}{57}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Mettere un modello in produzione: mlops}{58}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}Problemi con i dati}{58}{subsubsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.3}Training and evaluation}{58}{subsubsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.3}Fairness in ML}{59}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}No fairness through unawareness}{59}{subsubsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.2}Pitfalls of action}{59}{subsubsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.3}Statistical non-discrimination criteria}{59}{subsubsection.7.3.3}%
+\contentsline {subsubsection}{\numberline {7.3.4}Separation}{60}{subsubsection.7.3.4}%
+\contentsline {subsubsection}{\numberline {7.3.5}Sufficiency}{60}{subsubsection.7.3.5}%
+\contentsline {subsection}{\numberline {7.4}Come rimuoviamo gli stereotipi?}{60}{subsection.7.4}%
